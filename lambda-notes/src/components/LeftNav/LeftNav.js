@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import './index.css';
 
 class LeftNav extends Component {
     render() {
         return (
             <div className='nav_container'>
-                <div>    
+                <div>
                     <h1 className='nav_header'>Lambda Notes</h1>
                 </div>
                 <div className='nav_buttons_container'>
-                    <a href='#' className='button_link'>    
+                    <Link to='/' className='button_link'>
                         <div className='nav_button'>View Your Notes</div>
-                    </a>
-                    <a href='#' className='button_link'>
+                    </Link>
+                    <Link to='/create' className='button_link'>
                         <div className='nav_button'>+ Create New Note</div>
-                    </a>    
+                    </Link>
                 </div>
             </div>
         );
