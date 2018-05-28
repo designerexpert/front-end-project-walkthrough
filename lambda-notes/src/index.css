@@ -24,3 +24,22 @@ body {
 .button_link {
   text-decoration: none;
 }
+
+.button {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    background-color: #23B8BE;
+    border: 1px solid #86AEB1;
+    /*      TB   LR */
+    margin: 0.5rem 0.5rem;
+    height: 40px;
+    border-radius: 0.1rem;
+}
+
+.button--danger {
+    background-color: red;
+}
