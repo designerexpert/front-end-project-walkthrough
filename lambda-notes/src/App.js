@@ -5,8 +5,7 @@ import MainContent from './components/MainContent/MainContent';
 class App extends Component {
   render() {
     return (
-      <div>
-        PLACEHOLDER FOR APP! Hello World!
+      <div className='app_container'>
         <LeftNav />
         <MainContent />
       </div>
