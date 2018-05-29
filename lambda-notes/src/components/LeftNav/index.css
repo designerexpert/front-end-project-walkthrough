@@ -3,8 +3,12 @@
     flex-direction: column;
     padding: 1rem;
     width: 220px;
-    height: 100vh;
+    min-width: 220px;
+    max-width: 220px;
+    height: 90vh;
     background-color: #D3D3D3;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: 0.1rem;
 }
 
 .nav_header {
