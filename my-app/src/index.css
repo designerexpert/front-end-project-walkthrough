@@ -18,3 +18,8 @@ body {
   display: flex;
   /* flex-wrap: wrap; */
 }
+.content_header{
+  margin: 0 0.5rem;
+  font-weight: 600;
+  padding: 2rem 0;
+}
