@@ -1,0 +1,27 @@
+.notes_Form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+}
+.createNoteTitle {
+    height: 40px;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 0.2rem;
+    border: 1 px solid #b2b2b2;
+}
+.createNoteBody {
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 0.2rem;
+    border: 1 px solid #b2b2b2;
+}
+.createNote_button {
+    width: 45%;
+    margin-bottom: 1rem;
+    background-color: #23B8BE;
+    padding: 0.5rem 0;
+    color: white;
+    border-radius: 0.1rem;
+    font-weight: 600;
+}
