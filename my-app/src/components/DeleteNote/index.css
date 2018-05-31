@@ -1,0 +1,33 @@
+
+
+.delete_wrapper {
+    z-index: 1000;
+    position: absolute;
+    margin-left:-5%;
+    margin-top: 15%;
+    width: 60%;
+    height: 25%;
+    border: 1px solid rgb(65, 63, 63);
+    box-shadow: 1px 1px 8px rgb(58, 58, 59);
+    text-align: center;
+    background-color: white;
+
+}
+.delete_wrapper h4 {
+    padding-bottom: 5%;
+}
+.danger {
+    background-color: red;
+}
+.modalButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
+.modalButtons div {
+    width: 40%;
+    margin: 0.5 rem;
+}
+
+.hidden {
+    display: none;
+}

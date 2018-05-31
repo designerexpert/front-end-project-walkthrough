@@ -9,8 +9,8 @@ class LeftNav extends Component {
                 <h1>Lambda Notes</h1>
                 </div>
                 <div className='nav_buttons'>
-                    <button>View Your Notes</button>
-                    <button>+ Vreate New Note</button>
+                <button className='nav_button'><a href='#'>View Your Notes</a></button>
+                <button className='nav_button'><a href='#'>+ Vreate New Note</a></button>
                     
                     </div>
             </div>

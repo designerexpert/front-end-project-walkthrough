@@ -13,7 +13,7 @@ class CreactNote extends Component {
                     <div  className='notes_Form'>
                             <input type='text' className='createNoteTitle' placeholder='Note Title' />
                             <textarea className='createNoteBody' placeholder='Note Content' rows="20" />
-                            <button className='createNote_button'>Save</button>
+                            <a href='#' className='buttonLink'><button className='createNote_button'>Save</button></a>
                     </div>
                 </div>
         );

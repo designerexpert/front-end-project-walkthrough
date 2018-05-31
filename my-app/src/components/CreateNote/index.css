@@ -4,6 +4,7 @@
     padding: 0 0.5rem;
 }
 .createNoteTitle {
+    width: 60%;
     height: 40px;
     padding: 0.25rem 0.75rem;
     margin-bottom: 1rem;
@@ -24,4 +25,10 @@
     color: white;
     border-radius: 0.1rem;
     font-weight: 600;
+    border: none;
+    text-align: center;
+}
+/* had to insert this css here */
+.danger {
+    background-color: red;
 }
