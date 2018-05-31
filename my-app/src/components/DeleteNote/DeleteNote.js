@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import {deleteNote} from '../../actions';
+import { connect } from 'react-redux';
 import './index.css';
 
 class DeleteNote extends Component {
+    handleDeleteNote = () => {
+        this.props.deleteNote(this.props.toDelete);
+        this.props.history.push('/');
+    }
 // when this component will mount
     render() {
+        console.log('delete note props', this.props)
+
         let toggleInModal = this.props.toggle;
         return (
             // <div className='delete_wrapper hidden'>
@@ -12,12 +20,19 @@ class DeleteNote extends Component {
                 <div><h4>Are you sure...</h4>
                 </div>
                 <div className='modalButtons'>
-                    <div className='createNote_button danger' onClick={this.props.hideModal}>Delete</div>
-                    <div className='createNote_button' onClick={this.props.hideModal}>No</div>
+                    <div className='createNote_button danger' 
+                         onClick={() => {this.handleDeleteNote}}
+                    >Delete</div>
+                    <div className='createNote_button' 
+                        onClick={this.props.hideModal}
+                    >No</div>
                 </div>
             </div>
         );
     }
 }
 
-export default DeleteNote;
+export default connect(null, {deleteNote})(DeleteNote);
+
+// we need to pass info to the modal from parent Comp, in this case it is NoteView.js
+// we need to pass _id property and we are going to do that by passing as a props {this.state.matched[0]._id}

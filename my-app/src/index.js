@@ -6,10 +6,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import notesReducer from './reducers';
 
-const dummyreducer = (state = [], action) => state;
-
-const store = createStore(dummyreducer);
+const store = createStore(notesReducer); //now all app has access to this array of objects(notes)
 
 ReactDOM.render(
     (

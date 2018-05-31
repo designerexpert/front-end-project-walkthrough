@@ -1,38 +1,20 @@
 import React, { Component } from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+const mapStateToProps = (state) => {
+    // this helper function says: whatever our redux store is (which is an array of objects(notes)) set it inside of props
+    // by using this function and the props name is going to be 'notesArray'
+    // we need connection 
+    return {
+        notesArray: state
+    }
+}
 class NoteList extends Component {
     constructor() {
         super()
         this.state = {
-            notesArray: [
-                {
-                    _id: 'fajfdf2434',
-                    title: 'First Note',
-                    body: 'diodfjsa fjdos;ajfio fdjf aidjfidojfdkos afjda fd foidaufd fjd foja fjdiofja fjdk fdao;fjaof djf dajfd ioaf; jafj fj df jdsfj  fidofkaj fdiofjoa;jf; afidosa;f',
-                    createAt: 1527645632736,
-                },
-                {
-                    _id: 'fajffdsfsf4',
-                    title: 'Second Note',
-                    body: 'diodfjsa fjdos;ajfio fdjf aidjfidojfdkos afjda fd foidaufd fjd foja fjdiofja fjdk fdao;fjaof djf dajfd ioaf; jafj fj df jdsfj  fidofkaj fdiofjoa;jf; afidosa;f',
-                    createAt: 1527645632754,
-                },
-                {
-                    _id: 'fajfdf6754',
-                    title: 'Third Note',
-                    body: 'diodfjsa fjdos;ajfio fdjf aidjfidojfdkos afjda fd foidaufd fjd foja fjdiofja fjdk fdao;fjaof djf dajfd ioaf; jafj fj df jdsfj  fidofkaj fdiofjoa;jf; afidosa;f',
-                    createAt: 1527645665465,
-                },
-                {
-                    _id: 'fajfdf6723',
-                    title: 'Fourth Note',
-                    body: 'diodfjsa fjdos;ajfio fdjf aidjfidojfdkos afjda fd foidaufd fjd foja fjdiofja fjdk fdao;fjaof djf dajfd ioaf; jafj fj df jdsfj  fidofkaj fdiofjoa;jf; afidosa;f',
-                    createAt: 1527645665468,
-                }
-
-            ]
         }
     }    
 // to extract functionality - put it inside the body of class
@@ -51,17 +33,18 @@ class NoteList extends Component {
     })
 
     render() {
+        console.log('props via connect in NoteList: ', this.props)
             return (
             <div>
                 <div>
-                    <h3>Header</h3> 
+                    <h3>Your Notes:</h3> 
                 </div>
                 <div  className='notes_container'>
-                   {this.state.notesArray.map(this.generatorOfNotes)}
+                   {this.props.notesArray.map(this.generatorOfNotes)}
                 </div>
             </div>
         );
     }
 }
 
-export default NoteList;
+export default connect(mapStateToProps, {/* actionHere */})(NoteList);
