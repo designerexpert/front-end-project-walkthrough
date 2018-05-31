@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+import { Link } from 'react-router-dom';
 
 class NoteList extends Component {
     constructor() {
@@ -26,7 +27,7 @@ class NoteList extends Component {
                 },
                 {
                     _id: 'fajfdf6723',
-                    title: 'Third Note',
+                    title: 'Fourth Note',
                     body: 'diodfjsa fjdos;ajfio fdjf aidjfidojfdkos afjda fd foidaufd fjd foja fjdiofja fjdk fdao;fjaof djf dajfd ioaf; jafj fj df jdsfj  fidofkaj fdiofjoa;jf; afidosa;f',
                     createAt: 1527645665468,
                 }
@@ -37,15 +38,18 @@ class NoteList extends Component {
 // to extract functionality - put it inside the body of class
     generatorOfNotes = ((item, i) => {
         return(
-            <div className='note' key={i}> 
-                <div> 
-                    <h4>{item.title}</h4>
-                    <hr />
-                    <p>{item.body}</p>
+            <Link to={`/note/${item._id}`}  className='button_link' key={i}>
+                <div className='note'> 
+                    <div> 
+                        <h4>{item.title}</h4>
+                        <hr />
+                        <p>{item.body}</p>
+                    </div>
                 </div>
-            </div>
+            </Link>
         )
     })
+
     render() {
             return (
             <div>

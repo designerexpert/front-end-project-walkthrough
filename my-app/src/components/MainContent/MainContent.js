@@ -4,17 +4,22 @@ import NoteList from '../NoteList/NoteList';
 import NoteView from '../NoteView/NoteView';
 import CreateNote from '../CreateNote/CreactNote';
 import EditNote from '../EditNote/EditNote';
-import DeleteNote from '../DeleteNote/DeleteNote';
+import { Route, Switch } from 'react-router-dom';
 
 class MainContent extends Component {
     render() {
         return (
             <div className='main_container'>
-                {/* <NoteList /> */}
-                {/* <CreateNote /> */}
-                <NoteView />
-                <DeleteNote />
-                {/* <EditNote /> */}
+                <Switch>
+                    <Route exact path='/' component={ NoteList } />
+                    <Route exact path='/note/:id' component={ NoteView } />
+                    <Route exact path='/create' component={ CreateNote } />
+                    <Route exact path='/edit/:id' component={ EditNote } />
+                    {/* <NoteList /> */}
+                    {/* <CreateNote /> */}
+                    {/* <NoteView /> */}
+                    {/* <EditNote /> */}
+                </Switch>
             </div>
         );
     }
