@@ -1,4 +1,4 @@
-import {DELETE_NOTE} from '../actions';
+import {DELETE_NOTE, EDIT_NOTE} from '../actions';
 const initialState = [
     {
         _id: 'fajfdf2434',
@@ -29,10 +29,10 @@ const initialState = [
 //notesReduces will take two arguments: Current Application State, and action {can be an object} is optional,
 //and returns the next application state
 const notesReducer = (state = initialState, action) => {
+    //The Array.from() method creates a new, shallow-copied Array instance from an array-like or iterable object.
+    let temp = Array.from(state);
     switch(action.type) {
         case DELETE_NOTE:
-            //The Array.from() method creates a new, shallow-copied Array instance from an array-like or iterable object.
-            let temp = Array.from(state);
             state.forEach((item, i) => {
                 if (item._id === action.payload) {
                     temp.splice(i, 1); //start at i, and delete 1
@@ -40,6 +40,17 @@ const notesReducer = (state = initialState, action) => {
                 }
             });
             return temp;
+        case EDIT_NOTE:
+            state.forEach((item, i) => {
+                if (item._id === action.payload._id) {
+                    temp.splice(i, 1); //start at i, and delete 1
+                    return;
+                }
+            });
+            temp.unshift(action.payload);
+            return temp;
+
+
         default:
             return state;
     }

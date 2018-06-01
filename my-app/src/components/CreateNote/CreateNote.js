@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {createNote} from '../../actions';
 import './index.css';
 
-class CreactNote extends Component {
+class CreateNote extends Component {
+    constructor() {
+        super();
+        this.state = {
+
+        }
+    }
         render() {
             return (
                 <div className='noteView_container'>
                     <div className='noteView_topContent'>
                         <div className='content_header'>
-                            Creact New Note;
+                            Create New Note;
                         </div>
                     </div>
                     <div  className='notes_Form'>
@@ -20,4 +28,4 @@ class CreactNote extends Component {
     }
 }
 
-export default CreactNote;
+export default connect(null, {createNote})(CreateNote);

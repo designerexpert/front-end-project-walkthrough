@@ -6,7 +6,7 @@ import './index.css';
 class DeleteNote extends Component {
     handleDeleteNote = () => {
         this.props.deleteNote(this.props.toDelete);
-        this.props.history.push('/');
+        this.props.history.push('/'); // Browser Router provides this. it navigates into the home page
     }
 // when this component will mount
     render() {
