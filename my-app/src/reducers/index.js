@@ -1,4 +1,4 @@
-import {DELETE_NOTE, EDIT_NOTE} from '../actions';
+import {DELETE_NOTE, EDIT_NOTE, CREATE_NOTE} from '../actions';
 const initialState = [
     {
         _id: 'fajfdf2434',
@@ -49,8 +49,9 @@ const notesReducer = (state = initialState, action) => {
             });
             temp.unshift(action.payload);
             return temp;
-
-
+        case CREATE_NOTE:
+            temp.unshift(action.payload);
+            return temp;
         default:
             return state;
     }
