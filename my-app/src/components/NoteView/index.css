@@ -1,0 +1,11 @@
+.notes_container p  {
+    margin: 0 0.5rem;
+}
+.noteView_topContent {
+    display: flex;
+    justify-content: space-between;
+}
+.editDelete {
+    padding: 1rem 0.5rem;
+    color: rgb(66,66,66);
+}
